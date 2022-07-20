@@ -1,18 +1,21 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suneater Shop</title>
-    <link rel="shortcut icon" href="/img/sol.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
-    <script defer src="/js/database.js"></script>
-    <script defer src="/js/index.js"></script>
+
+    <link rel="shortcut icon" href="./img/sol.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script defer src="./js/database.js"></script>
+    <script defer src="./js/index.js"></script>
 </head>
 <body>
     <header>
-        <div class="cabecalho container">
+        <!-- <div class="cabecalho container">
             <h1>Suneater Shop</h1>
             <nav class="cabecalho-nav">
                 <a href="#">Todos</a>
@@ -20,12 +23,12 @@
                 <a href="#">Calçados</a>
                 <a href="#">Camisetas</a>
             </nav>
-        </div>
+        </div> -->
     </header>
     <main class="principal container">
         <section class="mostruario">
             <ul id="ul-01" type="none">
-                 <li>
+                 <!-- <li>
                     <img src="/img/camiseta_branca.svg" alt="camiseta branca">
                     <div>
                         <span>Camisetas</span>
@@ -84,22 +87,32 @@
                         <p class="valor">Valor do Produto</p>
                         <button class="btnAdd">Adicione ao carrinho</button>
                     </div>
-                 </li>
+                 </li> -->
             </ul>
         </section>
         <section class="info">
-            <article class="info-search">
+            <!-- <article class="info-search">
                 <input type="text" placeholder="Pesquisar Produto">
                 <button class="btnSearch">Pesquisar</button>
             </article>
             <article class="info-car">
                 <h2>Carrinho de Compras</h2>
-                <div>
+                <div class="carrinho-compras">
                     <h3>Carrinho Vazio</h3>
                     <span>Adicione Itens</span>
                 </div>
-            </article>
+                <div class="info-final">
+                    <div class="quantidade">
+                        <p class="p-final">Quantidade:</p>
+                        <span class="span-final">0</span>
+                    </div>
+                    <div class="total">
+                        <p class="p-final">Total:</p>
+                        <span class="span-final">R$0.00</span>
+                    </div>
+                </div>
+            </article> -->
         </section>
     </main>  
 </body>
-</html> -->
+</html>

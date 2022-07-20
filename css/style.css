@@ -216,7 +216,7 @@ ul li div .btnAdd:hover{
     align-items: center;
     justify-content: center;
 }
-.info-car div{
+.carrinho-compras{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -226,7 +226,6 @@ ul li div .btnAdd:hover{
     height: 400px;
 
     /* background: #F5F5F5; */
-    border-bottom: 2px solid #F5F5F5;
     border-right: 2px solid #F5F5F5;
     border-left: 2px solid #F5F5F5;
 
@@ -242,3 +241,38 @@ ul li div .btnAdd:hover{
     font-weight: 400;
     font-size: 14px;
 }
+.info-final{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 340px;
+    height: 120px;
+    padding: 20px;
+
+    color: #000;
+    background: #d3d3d3;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.quantidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.p-final{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+.span-final{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+

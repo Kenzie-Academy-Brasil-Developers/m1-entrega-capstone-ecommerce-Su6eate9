@@ -120,6 +120,7 @@ const h2Carrinho = document.createElement('h2')
 h2Carrinho.innerText = 'Carrinho de Compras'
 
 const divCarrinho = document.createElement('div')
+divCarrinho.classList.add('carrinho-compras')
 
 const h3Div = document.createElement('h3')
 const spanDiv = document.createElement('span')
@@ -130,20 +131,66 @@ spanDiv.innerText = 'Adicione Itens'
 divCarrinho.appendChild(h3Div)
 divCarrinho.appendChild(spanDiv)
 
+const divFinal = document.createElement('div')
+divFinal.classList.add('info-final')
+
+const divQuantidade = document.createElement('div')
+divQuantidade.classList.add('quantidade')
+
+const divTotal = document.createElement('div')
+divTotal.classList.add('total')
+
+const pQuantidade = document.createElement('p')
+pQuantidade.classList.add('p-final')
+pQuantidade.innerText = 'Quantidade:'
+const spanQuantidade = document.createElement('span')
+spanQuantidade.classList.add('span-final')
+spanQuantidade.innerText = '0'
+
+divQuantidade.appendChild(pQuantidade)
+divQuantidade.appendChild(spanQuantidade)
+
+const pTotal = document.createElement('p')
+pTotal.classList.add('p-final')
+pTotal.innerText = 'Total:'
+const spanTotal = document.createElement('span')
+spanTotal.classList.add('span-final')
+spanTotal.innerText = 'R$0.00'
+
+divTotal.appendChild(pTotal)
+divTotal.appendChild(spanTotal)
+
+divFinal.appendChild(divQuantidade)
+divFinal.appendChild(divTotal)
+
+//APPEND FINAL
 articleCar.appendChild(h2Carrinho)
 articleCar.appendChild(divCarrinho)
+articleCar.appendChild(divFinal)
 
 sectionInfo.appendChild(articleSearch)
 sectionInfo.appendChild(articleCar)
 
-{/* <article class="info-search">
+/* 
+<article class="info-search">
     <input type="text" placeholder="Pesquisar Produto">
     <button class="btnSearch">Pesquisar</button>
 </article>
 <article class="info-car">
     <h2>Carrinho de Compras</h2>
-    <div>
+    <div class="carrinho-compras">
         <h3>Carrinho Vazio</h3>
         <span>Adicione Itens</span>
     </div>
-</article> */}
+    <div class="info-final">
+        <div class="quantidade">
+            <p class="p-final">Quantidade:</p>
+            <span class="span-final">0</span>
+        </div>
+        <div class="total">
+            <p class="p-final">Total:</p>
+            <span class="span-final">R$0.00</span>
+        </div>
+    </div>
+</article>
+*/

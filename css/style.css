@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    max-width: 1350px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/* CABEÇALHO */
+header{
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.25);
+    /* position: fixed; */
+}
+.cabecalho{
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+}
+h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+}
+nav a{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #242424;
+    border: 2px solid transparent;
+}
+nav a:hover{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #242424;
+    border: 0px solid transparent;
+}
+.cabecalho-nav{
+    display: flex;
+    gap: 20px;
+}
+.cabecalho-nav a{
+    text-decoration: none; 
+}
+/* CONTEÚDO PRINCIPAL - SECTION 01*/
+.mostruario{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 75%;
+}
+ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 40px;
+    flex-wrap: wrap;
+}
+ul li{
+    width: 296px;
+    height: 154px;
+    background: #d3d3d3;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-bottom: 230px;
+}
+ul li:hover{
+    border: 2px solid black;
+}
+ul li div{
+    width: 296px;
+    height: 254px;
+    background: white;
+    border-bottom: 2px solid #F5F5F5;
+    border-right: 2px solid #F5F5F5;
+    border-left: 2px solid #F5F5F5;
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+    gap: 15px;
+}
+ul li div:hover{
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+ul li div span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+
+    width: 80px;
+    height: 24px;
+
+    background: #d3d3d3;
+}
+ul li div h2{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+}
+.desc{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+.valor{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+ul li div button{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 155px;
+    height: 25px;
+    background: #F7CA00;
+    border: none;
+    border-radius: 5px;
+}
+ul li div .btnAdd:hover{
+    background: rgb(255, 178, 35);
+    font-weight: 600;
+    transition: 0.5s linear;
+}
+/* CONTEÚDO PRINCIPAL - SECTION 02*/
+.info{
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info-search{
+    gap: 10px;
+    display: flex;
+}
+.info input{
+    width: 240px;
+    height: 52px;
+    padding: 15px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    background: #F5F5F5;
+    border: 1px solid #F5F5F5;
+}
+.btnSearch{
+    width: 90px;
+    height: 52px;
+    left: 1392px;
+    top: 122px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+
+    background: #F7CA00;
+    border: 1px solid #F7CA00;
+}
+.info-car{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-car h2{
+    width: 340px;
+    height: 50px;
+    border: 2px solid #F7CA00;
+    background: #F7CA00;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info-car div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 340px;
+    height: 400px;
+
+    /* background: #F5F5F5; */
+    border-bottom: 2px solid #F5F5F5;
+    border-right: 2px solid #F5F5F5;
+    border-left: 2px solid #F5F5F5;
+
+    overflow-y: auto;
+}
+.info-car div h3{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+}
+.info-car div span{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}

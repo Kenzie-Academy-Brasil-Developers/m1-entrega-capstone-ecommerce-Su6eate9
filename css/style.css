@@ -182,6 +182,7 @@ ul li div .btnAdd:hover{
 
     background: #F5F5F5;
     border: 1px solid #F5F5F5;
+    border-start-start-radius: 10px;
 }
 .btnSearch{
     width: 90px;
@@ -196,6 +197,7 @@ ul li div .btnAdd:hover{
 
     background: #F7CA00;
     border: 1px solid #F7CA00;
+    border-end-end-radius: 10px;
 }
 .info-car{
     display: flex;
@@ -229,9 +231,66 @@ ul li div .btnAdd:hover{
     border-right: 2px solid #F5F5F5;
     border-left: 2px solid #F5F5F5;
 
-    overflow-y: auto;
+    overflow-y: scroll;
 }
-.info-car div h3{
+.carrinho-compras ul{
+    background-color: #F5F5F5;
+    width: 320px;
+    height: 380px;
+    padding: 10px;
+
+    /* overflow-y: scroll; */
+}
+.carrinho-compras ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    height: 100px;
+    min-height: initial;
+    border: solid #ccc 1px;
+    max-width: 100%;
+}
+.carrinho-compras ul li.oferta::before{
+
+}
+.carrinho-compras ul li img{
+    max-width: 88px;
+    height: 92px;
+}
+.carrinho-compras ul li h3{
+    margin-bottom: 0;
+    padding: 0 20px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+.carrinho-compras ul li p{
+    width: 100px;
+}
+.carrinho-compras ul li button{
+    background-color: #f44336;
+    padding:0;
+    position: absolute;
+    right: 10px;
+    width: 29px;
+    height: 29px;
+    border-radius: 100%;
+    top: -5px;
+    opacity: 0;
+    color: transparent;
+    line-height: 29px;
+}
+.carrinho-compras ul li button::before{
+    content: "X";
+    display: block;
+    color: #fff;
+}
+.carrinho-compras ul li:hover button{
+   opacity: 1;
+}
+/* .info-car div h3{
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
@@ -240,7 +299,7 @@ ul li div .btnAdd:hover{
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-}
+} */
 .info-final{
     display: flex;
     flex-direction: column;
@@ -275,4 +334,3 @@ ul li div .btnAdd:hover{
     font-weight: 500;
     font-size: 16px;
 }
-

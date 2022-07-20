@@ -52,8 +52,11 @@ navCabecalho.appendChild(aCamisetas)
 //MAIN
 const ulProdutos = document.querySelector('#ul-01')
 const sectionInfo = document.querySelector('.info')
+const sectionCarrinho = document.querySelector('.carrinho-compras ul')
+
 //SECTION 01
-function createProducts(item){
+//MOSTRUÁRIO DE ITENS
+function listProducts(item){
     for(let i = 0; i < item.length; i++){
         const li = document.createElement('li')
         const div = document.createElement('div')
@@ -70,7 +73,7 @@ function createProducts(item){
             pDesc.innerText = `${item[i].description}`
         let pValor = document.createElement('p')
             pValor.classList.add('valor')
-            pValor .innerText = `R$${item[i].value}`
+            pValor .innerText = `R$${item[i].value}`.replace('.',',')
         let btnAdd = document.createElement('button')
             btnAdd.classList.add('btnAdd')
             btnAdd.innerText = 'Adicione ao carrinho'
@@ -87,8 +90,95 @@ function createProducts(item){
         ulProdutos.appendChild(li)
     }
 }
-createProducts(data)
-{/* <li>
+listProducts(data)
+
+//INSERE ITENS NO CARRINHO
+function createProduct(produto){
+    ulProdutos.innerHTML = ' ' //LIMPAR TELA PARA NÃO DUPLICAR
+
+    //ACESSANDO OS ITENS
+    let id          = produto.id
+    let img         = produto.img
+    let name        = produto.nameItem
+    let desc        = produto.description
+    let value       = produto.value
+    let addCart     = produto.addCart
+    let tag         = produto.tag
+
+    //CRIANDO PRODUTOS
+    const li = document.createElement('li')
+
+    let tagImg = document.createElement('img')
+        tagImg.src = item[i].img
+        tagImg.alt = item[i].nameItem
+    let tagSetor = document.createElement('span')
+        tagSetor.innerText = `${item[i].tag}`
+    let tagName = document.createElement('h2')
+        tagName.innerText = `${item[i].nameItem}`
+    let tagDesc = document.createElement('p')
+        tagDesc.classList.add('desc')
+        tagDesc.innerText = `${item[i].description}`
+    let tagValue = document.createElement('p')
+        tagValue.classList.add('valor')
+        tagValue .innerText = `R$${item[i].value}`.replace('.',',')
+    let btnAdd = document.createElement('button')
+        btnAdd.classList.add('btnAdd')
+        btnAdd.innerText = 'Adicione ao carrinho'
+    
+    //ADICIONANDO ID NO BOTÃO
+    if(id != undefined){
+        btnAdd.id = id
+    }
+
+    li.appendChild(tagImg)
+    li.appendChild(tagSetor)
+    li.appendChild(tagName)
+    li.appendChild(tagDesc)
+    li.appendChild(tagValue)
+    li.appendChild(btnAdd)
+
+    return li
+}
+
+//ADICIONAR PRODUTOS AO CARRINHO
+ulProdutos.addEventListener('click', interceptandoProduto)
+
+//RECEBER OS PRODUTOS
+function interceptandoProduto(event){
+    let btnAdd = event.target
+
+    if(btnAdd.tagName == 'BUTTON'){
+        //IDENTIFICANDO PRODUTO PELO ID
+        let idProduto = btnAdd.id
+
+        //VERIFICANDO SE O PRODUTO ESTÁ NA BASE
+        let produto = data.find(function(produto){
+            if(produto.id == idProduto){
+                return produto
+            }
+        })
+        //FUNÇÃO ADD PRODUTO NO CARRINHO
+        adicionarCarrinho(produto)
+    }
+}
+
+//FUNÇÃO ADD PRODUTO NO CARRINHO
+function adicionarCarrinho(produto){
+    if(produto !== undefined){
+        carrinho.push(produto)
+        listProducts(carrinho,ulProdutos)
+    }
+}
+
+//FUNÇÃO REMOVER CARRINHO
+function removerCarrinho(produto){
+    
+}
+
+
+
+
+/* <li>
     <img src="/img/camiseta_branca.svg" alt="camiseta branca">
     <div>
         <span>Camisetas</span>
@@ -97,79 +187,81 @@ createProducts(data)
         <p class="valor">Valor do Produto</p>
         <button class="btnAdd">Adicione ao carrinho</button>
     </div>
-</li> */}
+</li> */
 
 //SECTION 02
-const articleSearch = document.createElement('article')
-articleSearch.classList.add('info-search')
+//PESQUISA ITENS
+// const articleSearch = document.createElement('article')
+// articleSearch.classList.add('info-search')
 
-const input = document.createElement('input')
-const btnSearch = document.createElement('button')
+// const input = document.createElement('input')
+// const btnSearch = document.createElement('button')
 
-input.placeholder = 'Pesquisar Produto'
-btnSearch.classList.add('btnSearch')
-btnSearch.innerText = 'Pesquisar'
+// input.placeholder = 'Pesquisar Produto'
+// btnSearch.classList.add('btnSearch')
+// btnSearch.innerText = 'Pesquisar'
 
-articleSearch.appendChild(input)
-articleSearch.appendChild(btnSearch)
+// articleSearch.appendChild(input)
+// articleSearch.appendChild(btnSearch)
 
-const articleCar = document.createElement('article')
-articleCar.classList.add('info-car')
+// //CARRINHO
+// const articleCar = document.createElement('article')
+// articleCar.classList.add('info-car')
 
-const h2Carrinho = document.createElement('h2')
-h2Carrinho.innerText = 'Carrinho de Compras'
+// const h2Carrinho = document.createElement('h2')
+// h2Carrinho.innerText = 'Carrinho de Compras'
 
-const divCarrinho = document.createElement('div')
-divCarrinho.classList.add('carrinho-compras')
+// const divCarrinho = document.createElement('div')
+// divCarrinho.classList.add('carrinho-compras')
 
-const h3Div = document.createElement('h3')
-const spanDiv = document.createElement('span')
+// const h3Div = document.createElement('h3')
+// const spanDiv = document.createElement('span')
 
-h3Div.innerText = 'Carrinho Vazio'
-spanDiv.innerText = 'Adicione Itens'
+// h3Div.innerText = 'Carrinho Vazio'
+// spanDiv.innerText = 'Adicione Itens'
 
-divCarrinho.appendChild(h3Div)
-divCarrinho.appendChild(spanDiv)
+// divCarrinho.appendChild(h3Div)
+// divCarrinho.appendChild(spanDiv)
 
-const divFinal = document.createElement('div')
-divFinal.classList.add('info-final')
+// const divFinal = document.createElement('div')
+// divFinal.classList.add('info-final')
 
-const divQuantidade = document.createElement('div')
-divQuantidade.classList.add('quantidade')
+// const divQuantidade = document.createElement('div')
+// divQuantidade.classList.add('quantidade')
 
-const divTotal = document.createElement('div')
-divTotal.classList.add('total')
+// const divTotal = document.createElement('div')
+// divTotal.classList.add('total')
 
-const pQuantidade = document.createElement('p')
-pQuantidade.classList.add('p-final')
-pQuantidade.innerText = 'Quantidade:'
-const spanQuantidade = document.createElement('span')
-spanQuantidade.classList.add('span-final')
-spanQuantidade.innerText = '0'
+// const pQuantidade = document.createElement('p')
+// pQuantidade.classList.add('p-final')
+// pQuantidade.innerText = 'Quantidade:'
+// const spanQuantidade = document.createElement('span')
+// spanQuantidade.classList.add('span-final')
+// spanQuantidade.innerText = '0'
 
-divQuantidade.appendChild(pQuantidade)
-divQuantidade.appendChild(spanQuantidade)
+// divQuantidade.appendChild(pQuantidade)
+// divQuantidade.appendChild(spanQuantidade)
 
-const pTotal = document.createElement('p')
-pTotal.classList.add('p-final')
-pTotal.innerText = 'Total:'
-const spanTotal = document.createElement('span')
-spanTotal.classList.add('span-final')
-spanTotal.innerText = 'R$0.00'
+// const pTotal = document.createElement('p')
+// pTotal.classList.add('p-final')
+// pTotal.innerText = 'Total:'
+// const spanTotal = document.createElement('span')
+// spanTotal.classList.add('span-final')
+// spanTotal.innerText = 'R$0.00'
 
-divTotal.appendChild(pTotal)
-divTotal.appendChild(spanTotal)
+// divTotal.appendChild(pTotal)
+// divTotal.appendChild(spanTotal)
 
-divFinal.appendChild(divQuantidade)
-divFinal.appendChild(divTotal)
+// divFinal.appendChild(divQuantidade)
+// divFinal.appendChild(divTotal)
 
-//APPEND FINAL
-articleCar.appendChild(h2Carrinho)
-articleCar.appendChild(divCarrinho)
-articleCar.appendChild(divFinal)
+// //APPEND FINAL
+// articleCar.appendChild(h2Carrinho)
+// articleCar.appendChild(divCarrinho)
+// articleCar.appendChild(divFinal)
 
-sectionInfo.appendChild(articleSearch)
-sectionInfo.appendChild(articleCar)
+// sectionInfo.appendChild(articleSearch)
+// sectionInfo.appendChild(articleCar)
 
 /* 
 <article class="info-search">

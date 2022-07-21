@@ -10,6 +10,7 @@ body{
 }
 .container{
     max-width: 1350px;
+    min-width: 1280px;
     margin: 0 auto;
 
     display: flex;
@@ -36,28 +37,29 @@ h1{
     font-size: 30px;
     line-height: 24px;
 }
-nav a{
+.cabecalho-nav{
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cabecalho-nav a{
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 16px;
-    color: #242424;
-    border: 2px solid transparent;
+
+    color: #000;
+    text-decoration: none;
+
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: 1px;
 }
-nav a:hover{
-    font-style: normal;
+.cabecalho-nav a:hover{
     font-weight: 600;
     font-size: 16px;
-    line-height: 16px;
-    color: #242424;
-    border: 0px solid transparent;
-}
-.cabecalho-nav{
-    display: flex;
-    gap: 20px;
-}
-.cabecalho-nav a{
-    text-decoration: none; 
+
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: 1px;
 }
 /* CONTEÚDO PRINCIPAL - SECTION 01*/
 .mostruario{
@@ -75,25 +77,23 @@ ul{
 }
 ul li{
     width: 296px;
-    height: 154px;
     background: #d3d3d3;
+    border: 3px solid #d3d3d3; 
 
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    margin-bottom: 230px;
 }
 ul li:hover{
-    border: 2px solid black;
+    border: 3px solid black;
 }
 ul li div{
-    width: 296px;
+    width: 290px;
     height: 254px;
     background: white;
-    border-bottom: 2px solid #F5F5F5;
-    border-right: 2px solid #F5F5F5;
-    border-left: 2px solid #F5F5F5;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
     /* border: 1px solid black; */
 
     display: flex;
@@ -101,11 +101,6 @@ ul li div{
 
     padding: 20px;
     gap: 15px;
-}
-ul li div:hover{
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-    border-left: 2px solid black;
 }
 ul li div span{
     display: flex;
@@ -155,7 +150,7 @@ ul li div button{
 }
 ul li div .btnAdd:hover{
     background: rgb(255, 178, 35);
-    /* transition: 0.5s linear; */
+    cursor: pointer;
 }
 /* CONTEÚDO PRINCIPAL - SECTION 02*/
 .info{
@@ -198,6 +193,9 @@ ul li div .btnAdd:hover{
     border: 1px solid #F7CA00;
     border-end-end-radius: 10px;
 }
+.btnSearch:hover{
+    cursor: pointer;
+}
 .info-car{
     display: flex;
     flex-direction: column;
@@ -207,8 +205,6 @@ ul li div .btnAdd:hover{
     width: 340px;
     height: 50px;
     border: 2px solid #F7CA00;   
-    /* border-start-end-radius: 10px;
-    border-start-start-radius: 10px; */
     background: #F7CA00;
 
     font-style: normal;
@@ -228,79 +224,83 @@ ul li div .btnAdd:hover{
     width: 340px;
     height: 400px;
 
-    /* background: #F5F5F5; */
     border-right: 2px solid #F5F5F5;
     border-left: 2px solid #F5F5F5;
-
-    /* overflow-y: scroll; */
 }
 .carrinho-compras ul{
-    background-color: #F5F5F5;
-    width: 320px;
-    height: 380px;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
     overflow-y: scroll;
+
+    flex-wrap: wrap;
 }
 .carrinho-compras ul li{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
     
-    height: 100px;
-    min-height: initial;
+    height: 120px;
     border: solid #ccc 1px;
     max-width: 100%;
+
+    padding: 5px;
+    border-radius: 5px;
 }
 .carrinho-compras ul li.oferta::before{
 
 }
 .carrinho-compras ul li img{
-    max-width: 88px;
-    height: 92px;
+    max-width: 30%;
+}
+.carrinho-compras ul li div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+
+    padding: 5px 10px;
+    gap: 5px;
+    border-radius: 5px;
+
+    width: 70%;
+    height: 100%;
 }
 .carrinho-compras ul li h3{
-    margin-bottom: 0;
-    padding: 0 20px;
-
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
 }
 .carrinho-compras ul li p{
-    width: 100px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
 }
 .carrinho-compras ul li button{
-    background-color: #f44336;
-    padding:0;
-    position: absolute;
+    background-color: #F7CA00;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+
+    padding:5px;
     right: 10px;
-    width: 29px;
-    height: 29px;
-    border-radius: 100%;
+    width: 100%;
+    height: 20px;
+
+    border-radius: 10px;
+    border-color: #000;
     top: -5px;
-    opacity: 0;
-    color: transparent;
-    line-height: 29px;
-}
-.carrinho-compras ul li button::before{
-    content: "X";
-    display: block;
-    color: #fff;
 }
 .carrinho-compras ul li:hover button{
    opacity: 1;
 }
-/* .info-car div h3{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-}
-.info-car div span{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-} */
 .info-final{
     display: flex;
     flex-direction: column;

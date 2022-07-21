@@ -1,10 +1,4 @@
-/* 
-    PROCESSO: PRODUTOS GERADOS PELO DOM
-    00 - IDENTIFICAR OS ITENS A SEREM COLOCADOS
-    01 - CAPTURAR OS ITENS NA TELA
-    02 - CRIAR FUNCTION
-    03 - CRIAR ELEMENTOS
-*/
+
 //CABEÇALHO
 const header = document.querySelector('header')
 
@@ -55,6 +49,8 @@ const sectionInfo = document.querySelector('.info')
 const sectionCarrinho = document.querySelector('.carrinho-compras ul')
 
 //SECTION 01
+let carrinhoProdutos = []
+
 //MOSTRUÁRIO DE ITENS
 function listProducts(item){
     for(let i = 0; i < item.length; i++){
@@ -77,6 +73,44 @@ function listProducts(item){
         let btnAdd = document.createElement('button')
             btnAdd.classList.add('btnAdd')
             btnAdd.innerText = 'Adicione ao carrinho'
+
+        //ADICIONANDO PRODUTO AO CARRINHO
+        btnAdd.addEventListener('click', interceptandoProduto)
+
+        function interceptandoProduto(){
+            carrinhoProdutos.push(item[i])
+
+            const ulCarrinho = document.querySelector('.carrinho-compras ul')
+            let liCarrinho = document.createElement('li')
+            liCarrinho.classList.add('oferta')
+            let divCarrinho = document.createElement('div')
+
+            let imgCarrinho = document.createElement('img')
+
+            let nameCarrinho = document.createElement('h3')
+            let pCarrinho = document.createElement('p')
+            let btnCarrinho = document.createElement('button')
+
+            //PROPRIEDADES VARIAVEIS CARRINHO
+            imgCarrinho.src = item[i].img
+            imgCarrinho.alt = item[i].nameItem
+
+            nameCarrinho.innerText = `${item[i].nameItem}`
+
+            pCarrinho.innerText = `${item[i].description}`
+
+            btnCarrinho.innerText = 'Remover do Carrinho'
+
+            ulCarrinho.appendChild(liCarrinho)
+
+            liCarrinho.appendChild(imgCarrinho)
+            liCarrinho.appendChild(divCarrinho)
+
+            divCarrinho.appendChild(nameCarrinho)
+            divCarrinho.appendChild(pCarrinho)
+            divCarrinho.appendChild(btnCarrinho)
+        }
+             
 
         li.appendChild(img)
         li.appendChild(div)
@@ -140,27 +174,24 @@ function createProduct(produto){
     return li
 }
 
-//ADICIONAR PRODUTOS AO CARRINHO
-ulProdutos.addEventListener('click', interceptandoProduto)
-
 //RECEBER OS PRODUTOS
-function interceptandoProduto(event){
-    let btnAdd = event.target // > ERROR DE LOCATION
+// function interceptandoProduto(event){
+//     let btnAdd = event.target // > ERROR DE LOCATION
 
-    if(btnAdd.tagName == 'BUTTON'){
-        //IDENTIFICANDO PRODUTO PELO ID
-        let idProduto = btnAdd.id
-        //VERIFICANDO SE O PRODUTO ESTÁ NA BASE
-        let produto = data.find(function(produto){
-            if(produto.id == idProduto){
-                return produto
-            }
-        })
-        //FUNÇÃO ADD PRODUTO NO CARRINHO
-        adicionarCarrinho(produto)
-    }
-}
-console.log(interceptandoProduto())
+//     if(btnAdd.tagName == 'BUTTON'){
+//         //IDENTIFICANDO PRODUTO PELO ID
+//         let idProduto = btnAdd.id
+//         //VERIFICANDO SE O PRODUTO ESTÁ NA BASE
+//         let produto = data.find(function(produto){
+//             if(produto.id == idProduto){
+//                 return produto
+//             }
+//         })
+//         //FUNÇÃO ADD PRODUTO NO CARRINHO
+//         adicionarCarrinho(produto)
+//     }
+// }
+// console.log(interceptandoProduto())
 
 //FUNÇÃO ADD PRODUTO NO CARRINHO
 function adicionarCarrinho(produto){

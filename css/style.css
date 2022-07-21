@@ -155,8 +155,7 @@ ul li div button{
 }
 ul li div .btnAdd:hover{
     background: rgb(255, 178, 35);
-    font-weight: 600;
-    transition: 0.5s linear;
+    /* transition: 0.5s linear; */
 }
 /* CONTEÚDO PRINCIPAL - SECTION 02*/
 .info{
@@ -207,7 +206,9 @@ ul li div .btnAdd:hover{
 .info-car h2{
     width: 340px;
     height: 50px;
-    border: 2px solid #F7CA00;
+    border: 2px solid #F7CA00;   
+    /* border-start-end-radius: 10px;
+    border-start-start-radius: 10px; */
     background: #F7CA00;
 
     font-style: normal;
@@ -231,7 +232,7 @@ ul li div .btnAdd:hover{
     border-right: 2px solid #F5F5F5;
     border-left: 2px solid #F5F5F5;
 
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 .carrinho-compras ul{
     background-color: #F5F5F5;
@@ -239,7 +240,7 @@ ul li div .btnAdd:hover{
     height: 380px;
     padding: 10px;
 
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 }
 .carrinho-compras ul li{
     display: flex;

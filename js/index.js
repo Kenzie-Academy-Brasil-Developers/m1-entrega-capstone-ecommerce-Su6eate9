@@ -145,12 +145,11 @@ ulProdutos.addEventListener('click', interceptandoProduto)
 
 //RECEBER OS PRODUTOS
 function interceptandoProduto(event){
-    let btnAdd = event.target
+    let btnAdd = event.target // > ERROR DE LOCATION
 
     if(btnAdd.tagName == 'BUTTON'){
         //IDENTIFICANDO PRODUTO PELO ID
         let idProduto = btnAdd.id
-
         //VERIFICANDO SE O PRODUTO ESTÁ NA BASE
         let produto = data.find(function(produto){
             if(produto.id == idProduto){
@@ -161,6 +160,7 @@ function interceptandoProduto(event){
         adicionarCarrinho(produto)
     }
 }
+console.log(interceptandoProduto())
 
 //FUNÇÃO ADD PRODUTO NO CARRINHO
 function adicionarCarrinho(produto){
